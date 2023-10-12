@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="Chronobot"
-run/main_scene="res://levels/level.tscn"
+run/main_scene="res://levels/base_level.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_width=480
+window/size/viewport_height=270
 window/size/window_width_override=960
 window/size/window_height_override=540
 window/stretch/mode="viewport"
