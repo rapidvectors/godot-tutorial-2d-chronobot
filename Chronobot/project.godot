@@ -51,3 +51,4 @@ jump={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0.447059, 0.129412, 0.533333, 1)
