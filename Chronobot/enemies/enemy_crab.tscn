@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ll1w8pmjf7wk"]
+[gd_scene load_steps=15 format=3 uid="uid://ll1w8pmjf7wk"]
 
 [ext_resource type="Script" path="res://enemies/enemy_crab.gd" id="1_iothf"]
 [ext_resource type="Texture2D" uid="uid://dgrxmt86j1vr5" path="res://enemies/crab-idle.png" id="1_kt2ea"]
@@ -81,6 +81,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_8nxol"]
 radius = 13.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_wv3ht"]
+radius = 14.0
+
 [node name="EnemyCrab" type="CharacterBody2D"]
 script = ExtResource("1_iothf")
 
@@ -94,10 +97,19 @@ frame_progress = 0.580141
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -13)
 shape = SubResource("CircleShape2D_8nxol")
-debug_color = Color(0.694118, 0.32549, 0.929412, 0.419608)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
 
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, -13)
+shape = SubResource("CircleShape2D_wv3ht")
+debug_color = Color(0.937255, 0.129412, 0.541176, 0.419608)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

@@ -38,7 +38,7 @@ func _physics_process(delta : float):
 	
 	player_animations()
 	
-	print("State: ", State.keys()[current_state])
+	#print("State: ", State.keys()[current_state])
 
 
 func player_falling(delta : float):

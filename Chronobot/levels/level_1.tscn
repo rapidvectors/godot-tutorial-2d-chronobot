@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cg13hidxfod5d"]
+[gd_scene load_steps=4 format=3 uid="uid://cg13hidxfod5d"]
 
 [ext_resource type="PackedScene" uid="uid://ck80q7i6cfn5x" path="res://levels/base_level.tscn" id="1_3kjr0"]
 [ext_resource type="PackedScene" uid="uid://crnq7s50akxjp" path="res://background/parallax_background.tscn" id="2_enhfr"]
+[ext_resource type="PackedScene" uid="uid://ll1w8pmjf7wk" path="res://enemies/enemy_crab.tscn" id="3_omqh5"]
 
 [node name="Level1" instance=ExtResource("1_3kjr0")]
 
@@ -17,12 +18,6 @@ layer_2/tile_data = PackedInt32Array(-196599, 65536, 6, -131063, 65536, 7, -6552
 
 [node name="Player" parent="." index="2"]
 position = Vector2(96, -64)
-speed = 1000
-max_horizontal_speed = 300
-slow_down_speed = 1700
-jump = -300
-jump_horizontal_speed = 1000
-max_jump_horizontal_speed = 300
 
 [node name="Camera2D" parent="Player" index="3"]
 limit_left = 0
@@ -32,3 +27,17 @@ limit_bottom = 0
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
+
+[node name="Enemies" type="Node" parent="." index="3"]
+
+[node name="EnemyCrab" parent="Enemies" index="0" node_paths=PackedStringArray("patrol_points") instance=ExtResource("3_omqh5")]
+position = Vector2(592, -80)
+patrol_points = NodePath("PatrolPoints")
+
+[node name="PatrolPoints" type="Node2D" parent="Enemies/EnemyCrab" index="3"]
+
+[node name="Point1" type="Marker2D" parent="Enemies/EnemyCrab/PatrolPoints" index="0"]
+position = Vector2(-64, 16)
+
+[node name="Point2" type="Marker2D" parent="Enemies/EnemyCrab/PatrolPoints" index="1"]
+position = Vector2(48, 16)
