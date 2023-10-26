@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgrxmt86j1vr5"
-path="res://.godot/imported/crab-idle.png-857de422ba4574c9250b22545fd067be.ctex"
+path="res://.godot/imported/crab-idle.png-e5062a42e58558da69f2385a8580e7d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemies/crab-idle.png"
-dest_files=["res://.godot/imported/crab-idle.png-857de422ba4574c9250b22545fd067be.ctex"]
+source_file="res://enemies/crab/crab-idle.png"
+dest_files=["res://.godot/imported/crab-idle.png-e5062a42e58558da69f2385a8580e7d9.ctex"]
 
 [params]
 

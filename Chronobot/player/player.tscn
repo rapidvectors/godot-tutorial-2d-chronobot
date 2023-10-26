@@ -247,7 +247,7 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7slp3"]
 height = 42.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 script = ExtResource("1_wqxfn")
 
