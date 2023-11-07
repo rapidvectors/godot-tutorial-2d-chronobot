@@ -69,7 +69,7 @@ func player_run(delta : float):
 
 
 func player_jump(delta : float):
-	if Input.is_action_just_pressed("jump"):
+	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = jump
 		current_state = State.Jump
 	
