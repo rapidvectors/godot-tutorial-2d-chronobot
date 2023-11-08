@@ -114,3 +114,9 @@ func input_movement():
 	var direction : float = Input.get_axis("move_left", "move_right")
 	
 	return direction
+
+
+func _on_hurtbox_body_entered(body : Node2D):
+	if body.is_in_group("Enemy"):
+		print("Enemy entered ", body.damage_amount)
+		HealthManager.decrease_health(body.damage_amount)

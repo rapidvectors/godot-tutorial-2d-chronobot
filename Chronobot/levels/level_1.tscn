@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cg13hidxfod5d"]
+[gd_scene load_steps=5 format=3 uid="uid://cg13hidxfod5d"]
 
 [ext_resource type="PackedScene" uid="uid://ck80q7i6cfn5x" path="res://levels/base_level.tscn" id="1_3kjr0"]
 [ext_resource type="PackedScene" uid="uid://crnq7s50akxjp" path="res://background/parallax_background.tscn" id="2_enhfr"]
 [ext_resource type="PackedScene" uid="uid://ll1w8pmjf7wk" path="res://enemies/crab/enemy_crab.tscn" id="3_omqh5"]
+[ext_resource type="PackedScene" uid="uid://dabxfx3538yx0" path="res://ui/game_screen.tscn" id="4_kw8yo"]
 
 [node name="Level1" instance=ExtResource("1_3kjr0")]
 
@@ -19,7 +20,7 @@ layer_2/tile_data = PackedInt32Array(-196599, 65536, 6, -131063, 65536, 7, -6552
 [node name="Player" parent="." index="2"]
 position = Vector2(96, -64)
 
-[node name="Camera2D" parent="Player" index="3"]
+[node name="Camera2D" parent="Player" index="4"]
 limit_left = 0
 limit_top = -351
 limit_right = 1712
@@ -41,3 +42,5 @@ position = Vector2(-64, 16)
 
 [node name="Point2" type="Marker2D" parent="Enemies/EnemyCrab/PatrolPoints" index="1"]
 position = Vector2(48, 16)
+
+[node name="GameScreen" parent="." index="4" instance=ExtResource("4_kw8yo")]

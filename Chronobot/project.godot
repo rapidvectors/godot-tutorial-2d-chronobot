@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*res://scripts/game_manager.gd"
+HealthManager="*res://scripts/health_manager.gd"
 
 [display]
 
@@ -26,6 +27,7 @@ window/size/viewport_height=270
 window/size/window_width_override=960
 window/size/window_height_override=540
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [input]
 

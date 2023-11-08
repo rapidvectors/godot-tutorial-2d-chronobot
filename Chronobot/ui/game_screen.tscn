@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dabxfx3538yx0"]
+
+[ext_resource type="PackedScene" uid="uid://cqhro705skse6" path="res://ui/health_bar/health_bar.tscn" id="1_qquvf"]
+
+[node name="GameScreen" type="CanvasLayer"]
+
+[node name="HealthBar" parent="." instance=ExtResource("1_qquvf")]
+position = Vector2(10, 10)
