@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Chronobot"
-run/main_scene="res://levels/test_levels/test_level.tscn"
+run/main_scene="res://levels/level_1.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 

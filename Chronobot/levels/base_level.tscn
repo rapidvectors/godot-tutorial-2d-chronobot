@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ck80q7i6cfn5x"]
+[gd_scene load_steps=10 format=3 uid="uid://ck80q7i6cfn5x"]
 
 [ext_resource type="Texture2D" uid="uid://ckirxyvocah4a" path="res://tileset/game_tilesets_1.png" id="1_6p55w"]
 [ext_resource type="Texture2D" uid="uid://bn1st4or7r8mu" path="res://tileset/game_tilesets_props.png" id="2_reh23"]
 [ext_resource type="PackedScene" uid="uid://bfcmjoltsmsed" path="res://player/player.tscn" id="2_u5wdd"]
 [ext_resource type="Texture2D" uid="uid://dlbvqmgyxk8ut" path="res://tileset/game_tilesets_walls.png" id="3_5g4hd"]
+[ext_resource type="Script" path="res://player/player_camera.gd" id="5_n4aml"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kcdsc"]
 texture = ExtResource("1_6p55w")
@@ -684,5 +685,8 @@ layer_2/tile_data = PackedInt32Array()
 [node name="Player" parent="." instance=ExtResource("2_u5wdd")]
 position = Vector2(53, -104)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="PlayerCamera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(53, -104)
 editor_draw_limits = true
+script = ExtResource("5_n4aml")
+player = NodePath("../Player")
