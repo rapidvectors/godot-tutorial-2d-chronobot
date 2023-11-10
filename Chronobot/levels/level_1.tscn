@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cg13hidxfod5d"]
+[gd_scene load_steps=6 format=3 uid="uid://cg13hidxfod5d"]
 
 [ext_resource type="PackedScene" uid="uid://ck80q7i6cfn5x" path="res://levels/base_level.tscn" id="1_3kjr0"]
 [ext_resource type="PackedScene" uid="uid://crnq7s50akxjp" path="res://background/parallax_background.tscn" id="2_enhfr"]
 [ext_resource type="PackedScene" uid="uid://ll1w8pmjf7wk" path="res://enemies/crab/enemy_crab.tscn" id="3_omqh5"]
 [ext_resource type="PackedScene" uid="uid://dabxfx3538yx0" path="res://ui/game_screen.tscn" id="4_kw8yo"]
+[ext_resource type="PackedScene" uid="uid://dpr2mk4bvc8pc" path="res://pickups/health_pickup/health_pickup.tscn" id="5_q5sre"]
 
 [node name="Level1" instance=ExtResource("1_3kjr0")]
 
@@ -20,7 +21,7 @@ layer_2/tile_data = PackedInt32Array(-196599, 65536, 6, -131063, 65536, 7, -6552
 [node name="Enemies" type="Node" parent="." index="2"]
 
 [node name="EnemyCrab" parent="Enemies" index="0" node_paths=PackedStringArray("patrol_points") instance=ExtResource("3_omqh5")]
-position = Vector2(592, -80)
+position = Vector2(546, -72)
 patrol_points = NodePath("PatrolPoints")
 
 [node name="PatrolPoints" type="Node2D" parent="Enemies/EnemyCrab" index="3"]
@@ -31,14 +32,19 @@ position = Vector2(-64, 16)
 [node name="Point2" type="Marker2D" parent="Enemies/EnemyCrab/PatrolPoints" index="1"]
 position = Vector2(48, 16)
 
-[node name="Player" parent="." index="3"]
+[node name="Pickups" type="Node" parent="." index="3"]
+
+[node name="HealthPickup" parent="Pickups" index="0" instance=ExtResource("5_q5sre")]
+position = Vector2(734, -101)
+
+[node name="Player" parent="." index="4"]
 position = Vector2(96, -64)
 
-[node name="PlayerCamera2D" parent="." index="4"]
+[node name="PlayerCamera2D" parent="." index="5"]
 limit_left = 0
 limit_top = -350
 limit_right = 1500
 limit_bottom = 0
 position_smoothing_enabled = true
 
-[node name="GameScreen" parent="." index="5" instance=ExtResource("4_kw8yo")]
+[node name="GameScreen" parent="." index="6" instance=ExtResource("4_kw8yo")]
