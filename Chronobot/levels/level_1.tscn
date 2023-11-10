@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cg13hidxfod5d"]
+[gd_scene load_steps=8 format=3 uid="uid://cg13hidxfod5d"]
 
 [ext_resource type="PackedScene" uid="uid://ck80q7i6cfn5x" path="res://levels/base_level.tscn" id="1_3kjr0"]
 [ext_resource type="PackedScene" uid="uid://crnq7s50akxjp" path="res://background/parallax_background.tscn" id="2_enhfr"]
 [ext_resource type="PackedScene" uid="uid://ll1w8pmjf7wk" path="res://enemies/crab/enemy_crab.tscn" id="3_omqh5"]
 [ext_resource type="PackedScene" uid="uid://dabxfx3538yx0" path="res://ui/game_screen.tscn" id="4_kw8yo"]
 [ext_resource type="PackedScene" uid="uid://dpr2mk4bvc8pc" path="res://pickups/health_pickup/health_pickup.tscn" id="5_q5sre"]
+[ext_resource type="PackedScene" uid="uid://6n1oi11jo3ff" path="res://collectibles/blue_coin/blue_coin.tscn" id="6_4jjci"]
+[ext_resource type="PackedScene" uid="uid://k4qmylidb7fm" path="res://collectibles/green_diamond/green_diamond.tscn" id="7_8lvhc"]
 
 [node name="Level1" instance=ExtResource("1_3kjr0")]
 
@@ -37,14 +39,31 @@ position = Vector2(48, 16)
 [node name="HealthPickup" parent="Pickups" index="0" instance=ExtResource("5_q5sre")]
 position = Vector2(734, -101)
 
-[node name="Player" parent="." index="4"]
+[node name="Collectibles" type="Node" parent="." index="4"]
+
+[node name="BlueCoin" parent="Collectibles" index="0" instance=ExtResource("6_4jjci")]
+position = Vector2(232, -96)
+
+[node name="BlueCoin2" parent="Collectibles" index="1" instance=ExtResource("6_4jjci")]
+position = Vector2(272, -96)
+
+[node name="BlueCoin3" parent="Collectibles" index="2" instance=ExtResource("6_4jjci")]
+position = Vector2(312, -96)
+
+[node name="BlueCoin4" parent="Collectibles" index="3" instance=ExtResource("6_4jjci")]
+position = Vector2(352, -96)
+
+[node name="GreenDiamond" parent="Collectibles" index="4" instance=ExtResource("7_8lvhc")]
+position = Vector2(432, -97)
+
+[node name="Player" parent="." index="5"]
 position = Vector2(96, -64)
 
-[node name="PlayerCamera2D" parent="." index="5"]
+[node name="PlayerCamera2D" parent="." index="6"]
 limit_left = 0
 limit_top = -350
 limit_right = 1500
 limit_bottom = 0
 position_smoothing_enabled = true
 
-[node name="GameScreen" parent="." index="6" instance=ExtResource("4_kw8yo")]
+[node name="GameScreen" parent="." index="7" instance=ExtResource("4_kw8yo")]

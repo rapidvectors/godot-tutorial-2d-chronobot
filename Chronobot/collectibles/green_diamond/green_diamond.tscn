@@ -1,0 +1,85 @@
+[gd_scene load_steps=10 format=3 uid="uid://k4qmylidb7fm"]
+
+[ext_resource type="Script" path="res://collectibles/green_diamond/green_diamond.gd" id="1_4ax8g"]
+[ext_resource type="Texture2D" uid="uid://bn2eyu7maqlb6" path="res://collectibles/coins-and-gems.png" id="2_cgwlc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4psi"]
+atlas = ExtResource("2_cgwlc")
+region = Rect2(224, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsbso"]
+atlas = ExtResource("2_cgwlc")
+region = Rect2(240, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vefae"]
+atlas = ExtResource("2_cgwlc")
+region = Rect2(256, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnjyo"]
+atlas = ExtResource("2_cgwlc")
+region = Rect2(272, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfahi"]
+atlas = ExtResource("2_cgwlc")
+region = Rect2(288, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kb7ov"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4psi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsbso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vefae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnjyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfahi")
+}],
+"loop": true,
+"name": &"pickup",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ber7f"]
+radius = 7.0
+
+[node name="GreenDiamond" type="Node2D"]
+position = Vector2(0, -1)
+script = ExtResource("1_4ax8g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kb7ov")
+animation = &"pickup"
+autoplay = "pickup"
+frame_progress = 0.85252
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 1)
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ber7f")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -11.0
+offset_right = 20.0
+offset_bottom = 15.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "5"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

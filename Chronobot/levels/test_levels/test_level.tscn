@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdcg51gihnmd5"]
+[gd_scene load_steps=9 format=3 uid="uid://bdcg51gihnmd5"]
 
 [ext_resource type="PackedScene" uid="uid://ck80q7i6cfn5x" path="res://levels/base_level.tscn" id="1_k3fah"]
 [ext_resource type="PackedScene" uid="uid://crnq7s50akxjp" path="res://background/parallax_background.tscn" id="2_s2g2l"]
 [ext_resource type="PackedScene" uid="uid://ll1w8pmjf7wk" path="res://enemies/crab/enemy_crab.tscn" id="3_avix7"]
 [ext_resource type="PackedScene" uid="uid://dabxfx3538yx0" path="res://ui/game_screen.tscn" id="4_66jhf"]
 [ext_resource type="PackedScene" uid="uid://dpr2mk4bvc8pc" path="res://pickups/health_pickup/health_pickup.tscn" id="5_60b51"]
+[ext_resource type="PackedScene" uid="uid://6n1oi11jo3ff" path="res://collectibles/blue_coin/blue_coin.tscn" id="6_6mxew"]
+[ext_resource type="PackedScene" uid="uid://k4qmylidb7fm" path="res://collectibles/green_diamond/green_diamond.tscn" id="7_wk8vo"]
+[ext_resource type="PackedScene" uid="uid://bq3jkhl50fu" path="res://collectibles/pink_gem/pink_gem.tscn" id="8_ykvu8"]
 
 [node name="TestLevel" instance=ExtResource("1_k3fah")]
 
@@ -34,9 +37,20 @@ position = Vector2(48, 16)
 [node name="HealthPickup" parent="Pickups" index="0" instance=ExtResource("5_60b51")]
 position = Vector2(391, -111)
 
-[node name="GameScreen" parent="." index="5" instance=ExtResource("4_66jhf")]
+[node name="Collectibles" type="Node" parent="." index="4"]
 
-[node name="PlayerCamera2D" parent="." index="6"]
+[node name="BlueCoin" parent="Collectibles" index="0" instance=ExtResource("6_6mxew")]
+position = Vector2(523, -104)
+
+[node name="GreenDiamond" parent="Collectibles" index="1" instance=ExtResource("7_wk8vo")]
+position = Vector2(630, -104)
+
+[node name="PinkGem" parent="Collectibles" index="2" instance=ExtResource("8_ykvu8")]
+position = Vector2(576, -104)
+
+[node name="GameScreen" parent="." index="6" instance=ExtResource("4_66jhf")]
+
+[node name="PlayerCamera2D" parent="." index="7"]
 limit_left = 0
 limit_top = -303
 limit_right = 1500
