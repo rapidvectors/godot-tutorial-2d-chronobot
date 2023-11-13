@@ -6,6 +6,8 @@ var level_1 = preload("res://levels/level_1.tscn")
 
 func _ready():
 	RenderingServer.set_default_clear_color(Color(0.44,0.12,0.53,1.00))
+	
+	SettingsManager.load_settings()
 
 
 func start_game():
