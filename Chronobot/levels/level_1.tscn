@@ -58,6 +58,7 @@ position = Vector2(432, -97)
 
 [node name="Player" parent="." index="5"]
 position = Vector2(96, -64)
+jump_count = 2
 
 [node name="PlayerCamera2D" parent="." index="6"]
 limit_left = 0
