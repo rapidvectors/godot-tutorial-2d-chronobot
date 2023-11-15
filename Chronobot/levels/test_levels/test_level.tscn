@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdcg51gihnmd5"]
+[gd_scene load_steps=10 format=3 uid="uid://bdcg51gihnmd5"]
 
 [ext_resource type="PackedScene" uid="uid://ck80q7i6cfn5x" path="res://levels/base_level.tscn" id="1_k3fah"]
 [ext_resource type="PackedScene" uid="uid://crnq7s50akxjp" path="res://background/parallax_background.tscn" id="2_s2g2l"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://6n1oi11jo3ff" path="res://collectibles/blue_coin/blue_coin.tscn" id="6_6mxew"]
 [ext_resource type="PackedScene" uid="uid://k4qmylidb7fm" path="res://collectibles/green_diamond/green_diamond.tscn" id="7_wk8vo"]
 [ext_resource type="PackedScene" uid="uid://bq3jkhl50fu" path="res://collectibles/pink_gem/pink_gem.tscn" id="8_ykvu8"]
+[ext_resource type="PackedScene" uid="uid://7pyg1q5x1xse" path="res://levels/door/door.tscn" id="9_ib03h"]
 
 [node name="TestLevel" instance=ExtResource("1_k3fah")]
 
@@ -59,3 +60,8 @@ limit_top = -303
 limit_right = 1500
 limit_bottom = 0
 position_smoothing_enabled = true
+
+[node name="Door" parent="." index="8" instance=ExtResource("9_ib03h")]
+position = Vector2(734, -63)
+scale = Vector2(-1, 1)
+next_scene = "Level1"

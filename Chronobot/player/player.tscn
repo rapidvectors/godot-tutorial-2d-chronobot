@@ -302,10 +302,8 @@ script = ExtResource("1_wqxfn")
 material = SubResource("ShaderMaterial_5kha7")
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_il2ct")
-animation = &"run_shoot"
+animation = &"idle"
 autoplay = "idle"
-frame = 3
-frame_progress = 0.898916
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
