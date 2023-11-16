@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cg13hidxfod5d"]
+[gd_scene load_steps=10 format=3 uid="uid://cg13hidxfod5d"]
 
 [ext_resource type="PackedScene" uid="uid://ck80q7i6cfn5x" path="res://levels/base_level.tscn" id="1_3kjr0"]
 [ext_resource type="PackedScene" uid="uid://crnq7s50akxjp" path="res://background/parallax_background.tscn" id="2_enhfr"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dpr2mk4bvc8pc" path="res://pickups/health_pickup/health_pickup.tscn" id="5_q5sre"]
 [ext_resource type="PackedScene" uid="uid://6n1oi11jo3ff" path="res://collectibles/blue_coin/blue_coin.tscn" id="6_4jjci"]
 [ext_resource type="PackedScene" uid="uid://k4qmylidb7fm" path="res://collectibles/green_diamond/green_diamond.tscn" id="7_8lvhc"]
+[ext_resource type="PackedScene" uid="uid://cxilejs35uqha" path="res://levels/keys/key.tscn" id="8_i3aku"]
 [ext_resource type="PackedScene" uid="uid://7pyg1q5x1xse" path="res://levels/door/door.tscn" id="8_xti8t"]
 
 [node name="Level1" instance=ExtResource("1_3kjr0")]
@@ -57,11 +58,16 @@ position = Vector2(352, -96)
 [node name="GreenDiamond" parent="Collectibles" index="4" instance=ExtResource("7_8lvhc")]
 position = Vector2(432, -97)
 
-[node name="Door" parent="." index="5" instance=ExtResource("8_xti8t")]
+[node name="Door1" type="Node" parent="." index="5"]
+
+[node name="Door" parent="Door1" index="0" instance=ExtResource("8_xti8t")]
 position = Vector2(1648, -239)
 rotation = 3.14159
 scale = Vector2(1, -1)
 next_scene = "Level2"
+
+[node name="Key" parent="Door1" index="1" instance=ExtResource("8_i3aku")]
+position = Vector2(95, -200)
 
 [node name="Player" parent="." index="6"]
 position = Vector2(96, -64)

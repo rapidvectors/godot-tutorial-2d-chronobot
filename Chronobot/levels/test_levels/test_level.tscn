@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bdcg51gihnmd5"]
+[gd_scene load_steps=11 format=3 uid="uid://bdcg51gihnmd5"]
 
 [ext_resource type="PackedScene" uid="uid://ck80q7i6cfn5x" path="res://levels/base_level.tscn" id="1_k3fah"]
 [ext_resource type="PackedScene" uid="uid://crnq7s50akxjp" path="res://background/parallax_background.tscn" id="2_s2g2l"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://k4qmylidb7fm" path="res://collectibles/green_diamond/green_diamond.tscn" id="7_wk8vo"]
 [ext_resource type="PackedScene" uid="uid://bq3jkhl50fu" path="res://collectibles/pink_gem/pink_gem.tscn" id="8_ykvu8"]
 [ext_resource type="PackedScene" uid="uid://7pyg1q5x1xse" path="res://levels/door/door.tscn" id="9_ib03h"]
+[ext_resource type="PackedScene" uid="uid://cxilejs35uqha" path="res://levels/keys/key.tscn" id="10_2mvso"]
 
 [node name="TestLevel" instance=ExtResource("1_k3fah")]
 
@@ -49,19 +50,27 @@ position = Vector2(630, -104)
 [node name="PinkGem" parent="Collectibles" index="2" instance=ExtResource("8_ykvu8")]
 position = Vector2(576, -104)
 
-[node name="Player" parent="." index="5"]
+[node name="Door1" type="Node" parent="." index="5"]
+
+[node name="Door" parent="Door1" index="0" instance=ExtResource("9_ib03h")]
+position = Vector2(910, -64)
+rotation = -3.14159
+scale = Vector2(1, -1)
+next_scene = "Level1"
+key_id = "12345"
+
+[node name="Key" parent="Door1" index="1" instance=ExtResource("10_2mvso")]
+position = Vector2(730, -96)
+key_id = "12345"
+
+[node name="Player" parent="." index="6"]
 jump_count = 2
 
-[node name="GameScreen" parent="." index="6" instance=ExtResource("4_66jhf")]
+[node name="GameScreen" parent="." index="7" instance=ExtResource("4_66jhf")]
 
-[node name="PlayerCamera2D" parent="." index="7"]
+[node name="PlayerCamera2D" parent="." index="8"]
 limit_left = 0
 limit_top = -303
 limit_right = 1500
 limit_bottom = 0
 position_smoothing_enabled = true
-
-[node name="Door" parent="." index="8" instance=ExtResource("9_ib03h")]
-position = Vector2(734, -63)
-scale = Vector2(-1, 1)
-next_scene = "Level1"
