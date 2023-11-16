@@ -72,6 +72,7 @@ limit_left = 0
 limit_top = -350
 limit_right = 1689
 limit_bottom = 0
-position_smoothing_enabled = true
+smoothing_enabled = true
+smoothing_distance = 2
 
 [node name="GameScreen" parent="." index="8" instance=ExtResource("4_kw8yo")]
