@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnjsxlu5isvh4"
-path="res://.godot/imported/player-run-shoot.png-c9a7715623dcd6bd85ee8243bfab80ca.ctex"
+uid="uid://c451nlt658rcu"
+path="res://.godot/imported/player-shoot-stand.png-1c02798603ad8d04647b90898fe9382a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/player-run-shoot.png"
-dest_files=["res://.godot/imported/player-run-shoot.png-c9a7715623dcd6bd85ee8243bfab80ca.ctex"]
+source_file="res://player/player-shoot-stand.png"
+dest_files=["res://.godot/imported/player-shoot-stand.png-1c02798603ad8d04647b90898fe9382a.ctex"]
 
 [params]
 

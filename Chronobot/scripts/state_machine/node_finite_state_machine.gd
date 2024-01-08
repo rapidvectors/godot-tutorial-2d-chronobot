@@ -11,6 +11,7 @@ func _ready():
 	for child in get_children():
 		if child is NodeState:
 			node_states[child.name.to_lower()] = child
+			child.transition.connect(transition_to)
 	
 	if initial_node_state:
 		initial_node_state.enter()

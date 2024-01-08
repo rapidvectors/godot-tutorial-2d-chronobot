@@ -1,6 +1,8 @@
 class_name NodeState
 extends Node
 
+signal transition
+
 func on_process(delta : float):
 	pass
 
