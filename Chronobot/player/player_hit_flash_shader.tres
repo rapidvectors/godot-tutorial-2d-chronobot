@@ -13,6 +13,7 @@ default_value_enabled = true
 default_input_values = [0, 0.0, 1, 1.0, 2, 1e-05, 3, Vector3(0, 0, 0), 4, Vector3(0, 0, 0), 5, Vector3(0, 0, 0)]
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_fhhcd"]
+expanded_output_ports = [0]
 input_name = "color"
 
 [resource]
@@ -61,16 +62,15 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-327.264, -24.3273)
 mode = 1
 flags/light_only = false
-nodes/fragment/0/position = Vector2(580, 220)
+nodes/fragment/0/position = Vector2(540, 160)
 nodes/fragment/2/node = SubResource("VisualShaderNodeColorParameter_6rijc")
-nodes/fragment/2/position = Vector2(-260, 280)
+nodes/fragment/2/position = Vector2(-260, 260)
 nodes/fragment/3/node = SubResource("VisualShaderNodeBooleanParameter_vs7kl")
-nodes/fragment/3/position = Vector2(-260, 60)
+nodes/fragment/3/position = Vector2(-260, 80)
 nodes/fragment/4/node = SubResource("VisualShaderNodeIf_mii71")
 nodes/fragment/4/position = Vector2(140, 80)
 nodes/fragment/5/node = SubResource("VisualShaderNodeInput_fhhcd")
-nodes/fragment/5/position = Vector2(-260, 500)
-nodes/fragment/connections = PackedInt32Array(3, 0, 4, 0, 2, 0, 4, 3, 4, 0, 0, 0, 5, 0, 4, 4, 5, 0, 4, 5)
+nodes/fragment/5/position = Vector2(-260, 460)
+nodes/fragment/connections = PackedInt32Array(3, 0, 4, 0, 5, 0, 4, 4, 5, 0, 4, 5, 2, 0, 4, 3, 4, 0, 0, 0)

@@ -10,6 +10,7 @@ var bullet = preload("res://player/bullet.tscn")
 @export var speed : int = 1000
 @export var max_horizontal_speed: int = 300
 
+const GRAVITY : int = 1000
 var muzzle_position : Vector2
 
 func on_process(delta : float):
@@ -27,6 +28,8 @@ func on_physics_process(delta : float):
 	
 	if direction != 0:
 		animated_sprite_2d.flip_h = false if direction > 0 else true
+	
+	character_body_2d.velocity.y += GRAVITY * delta
 	
 	if GameInputEvents.shoot_input():
 		gun_shooting(direction)

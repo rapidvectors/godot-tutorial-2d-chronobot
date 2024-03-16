@@ -7,6 +7,7 @@ extends NodeState
 @export var speed : int = 1000
 @export var max_horizontal_speed: int = 300
 
+const GRAVITY : int = 1000
 
 func on_process(delta : float):
 	pass
@@ -21,6 +22,8 @@ func on_physics_process(delta : float):
 	
 	if direction != 0:
 		animated_sprite_2d.flip_h = false if direction > 0 else true
+	
+	character_body_2d.velocity.y += GRAVITY * delta
 	
 	character_body_2d.move_and_slide()
 	
@@ -37,6 +40,10 @@ func on_physics_process(delta : float):
 	#shoot run state
 	if direction != 0 and GameInputEvents.shoot_input():
 		transition.emit("ShootRun")
+	
+		# fall state
+	if !character_body_2d.is_on_floor():
+		transition.emit("Fall")
 
 
 func enter():
